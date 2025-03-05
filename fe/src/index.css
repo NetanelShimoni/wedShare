@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&family=Open+Sans+Hebrew:wght@400;700&family=David+Libre:wght@400;700&display=swap");
+@font-face {
+  font-family: "Gveret Levin";
+  src: url("./fonts/Gveret_Levin_AlefAlefAlef_Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

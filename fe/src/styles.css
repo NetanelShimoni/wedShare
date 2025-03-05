@@ -1,0 +1,277 @@
+/* Mobile-first responsive design */
+.gallery-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+  /* padding: 16px; */
+  max-width: 100%;
+}
+
+.header {
+  display: flex;
+  padding: 12px 16px;
+  height: 20%;
+  width: 100%;
+  align-items: center;
+  background-image: url("/public/icons/confeti2.jpeg");
+  background-size: 50% auto;
+  justify-content: center;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #8888;
+  border-radius: 0 0 100% 100%;
+  position: sticky;
+  z-index: 500;
+  top: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.download-button,
+.close-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.download-button {
+  color: #4caf50;
+}
+
+.close-button {
+  color: #f44336;
+}
+
+.date {
+  font-size: 24px;
+  color: #666;
+  text-align: center;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #333;
+}
+
+.titleDateContainer {
+  padding: 5% 0 5% 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  gap: 5px;
+  font-family: "Heebo", "Open Sans Hebrew", "David Libre", Assistant, sans-serif;
+  justify-items: center;
+  text-align: center;
+  color: #333;
+}
+
+.allImageContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #8888;
+}
+
+.photos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: row-reverse; /* הופך את הסדר מימין לשמאל */
+}
+
+.photo-item {
+  flex: 0 0 calc(33.333% - 10px); /* שלוש תמונות בשורה עם רווח */
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.flexRow {
+  display: flex;
+  min-width: 180px;
+  max-width: 250px;
+}
+
+.buttonImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 40px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-family: "Heebo", "Open Sans Hebrew", sans-serif;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttonImage img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.buttonImageClick {
+  background-color: #8bbaca;
+  color: white;
+  font-weight: 600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-thumbnail {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* עיצוב לכפתור הניגון */
+.react-player__play-icon {
+  border-color: transparent transparent transparent #ffffff !important;
+}
+
+.react-player__shadow {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 50% !important;
+}
+
+/* מדיה קוורי למסכים קטנים */
+@media screen and (max-width: 768px) {
+  .buttonImage {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .buttonImage img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .title {
+    width: 100%;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    gap: 5px;
+    font-family: "Heebo", "Open Sans Hebrew", "David Libre", Assistant,
+      sans-serif;
+    justify-items: center;
+    text-align: center;
+    color: #333;
+  }
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 8px;
+  align-content: end;
+  /* border: 2px solid #888; */
+  
+   /* border-radius: 20px; */
+  /* padding: 5; */
+  min-height: 100%; /* או גובה ספציפי אחר */
+}
+
+.photo-item {
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 1000px) {
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px;
+    align-content: end;
+    min-height: 100%; /* או גובה ספציפי אחר */
+  }
+
+  .buttonImage {
+    font-size: 14px;
+    padding-bottom: 8px;
+    display: flex;
+    gap: 7px;
+    padding: auto;
+    margin: auto;
+  }
+
+  .flexRow {
+    width: 50%;
+    padding: 0 4%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* box-shadow: 8px 12px 20px rgba(0, 0, 0, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.1);  */
+  }
+}
+
+/* מובייל - אייפון ואנדרואיד */
+@media (max-width: 768px) {
+}
