@@ -40,7 +40,8 @@ function App() {
   const fetchAllPhotos = async () => {
     setIsFetchingAllImages(true);
     // const allPhotos = await axios.get("http://192.168.1.215:3000/list");
-    const allPhotos = await axios.get("http://172.20.10.12:3000/list");
+    // const allPhotos = await axios.get("http://172.20.10.12:3000/list");
+    const allPhotos = await axios.get("https://wedshare-4.onrender.com/list");
     if (allPhotos.status === 200) {
       setPhotos([...mainPhoto, ...allPhotos.data]);
     } else {

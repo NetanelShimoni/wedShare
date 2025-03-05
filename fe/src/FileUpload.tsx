@@ -137,8 +137,9 @@ export function FileUpload({ handleOnFinishUpload }: IFileUpload) {
     });
 
     try {
-      const response = await fetch("http://172.20.10.12:3000/upload", {
-        // const response = awa  it fetch("http://192.168.1.215:3000/upload", {
+      // const response = await fetch("http://172.20.10.12:3000/upload", {
+        // const response = await fetch("http://192.168.1.215:3000/upload", {
+        const response = await fetch("https://wedshare-4.onrender.com/upload", {
         method: "POST",
         body: formData,
       });
